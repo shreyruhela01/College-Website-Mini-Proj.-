@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>College Space</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+/* style for body1 */
+
+body {
+   background: rgb(233, 222, 222);
+   
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: #1f2020;
+  color: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+.navbar a.right {
+  float: right;
+}
+
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+
+.row {  
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+.
+
+.row1 {
+  -ms-flex: 30%; 
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+
+.main {   
+  -ms-flex: 70%; 
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+p{
+   font-size: 20; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Containers CSS.. */
+
+
+:root {
+        --background-dark: #2d3548;
+        --text-light: rgba(255, 255, 255, 0.6);
+        --text-lighter: rgba(255, 255, 255, 0.9);
+        --spacing-s: 8px;
+        --spacing-m: 16px;
+        --spacing-l: 24px;
+        --spacing-xl: 32px;
+        --spacing-xxl: 64px;
+        --width-container: 1200px;
+    }
+    
+    * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .progress {
+        background-color: burlywood;
+        height: 3px;
+        animation: load 1.5s ease-in-out 1s;
+    }
+    
+    @keyframes load {
+        0% {
+            width: 0;
+        }
+        40% {
+            width: 65vw;
+        }
+        100% {
+            width: 100vw;
+        }
+    }
+    
+    html {
+        height: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+    }
+    
+    body {
+        height: 100%;
+    }
+    
+.hero-section {
+        align-items: flex-start;
+        background-image: linear-gradient(15deg, #f1f1f1 0%, #2a6973 150%);
+        display: flex;
+        min-height: 90%;
+        justify-content: center;
+        padding: var(--spacing-xxl) var(--spacing-l);
+    }
+    
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: var(--spacing-l);
+        grid-row-gap: var(--spacing-l);
+        max-width: var(--width-container);
+        width: 100%;
+    }
+    
+    @media(min-width: 540px) {
+        .card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media(min-width: 960px) {
+        .card-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    
+    .card {
+        list-style: none;
+        position: relative;
+    }
+    
+    .card:before {
+        content: '';
+        display: block;
+        padding-bottom: 150%;
+        width: 100%;
+    }
+    
+    .card__background {
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--spacing-l);
+        bottom: 0;
+        filter: brightness(0.75) saturate(1.2) contrast(0.85);
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform-origin: center;
+        transform: scale(1) translateZ(0);
+        transition: filter 200ms linear, transform 200ms linear;
+    }
+    
+    .card:hover .card__background {
+        transform: scale(1.05) translateZ(0);
+    }
+    
+    .card-grid:hover>.card:not(:hover) .card__background {
+        filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+    }
+    
+    .card__content {
+        left: 0;
+        padding: var(--spacing-l);
+        position: absolute;
+        top: 0;
+    }
+    
+    .card__category {
+        color: black;
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-s);
+        text-transform: uppercase;
+    }
+    
+    .card__heading {
+        color: black;
+        font-size: 1.9rem;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+        word-spacing: 100vw;
+    }
+
+    input[type=text], [type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: mediumpurple;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: deeppink;
+}
+
+
+.contactform {
+  position: relative;    
+  border-radius: 50px;
+  background-color: #f2f2f2;
+  padding: 5px;
+  z-index:2;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:auto;
+  margin-top:3%;    
+  width: 50%;
+  animation-name: gradient;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;  
+    
+}
+    
+.contactform:hover { 
+ animation-name: gradient;
+ animation-duration: 15s;
+ animation-iteration-count: infinite;    
+    
+   
+}
+
+
+.column {
+  float: center;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+    
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: auto;
+    margin-top:0;
+  }
+}
+
+
+@keyframes gradient {
+  0%   {background-color: #eec6f0;}
+  20%   {background-color: #aeeed5;}
+  40%  {background-color: #759CEC;}
+  60%   {background-color: #bfebe9;}
+  80%  {background-color: #ecd4c4;}       
+  100% {background-color: #debfe9;}
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="header">
+  <h1>College Space</h1> <br>
+  <h3>MIT,Moradabad <br> <br> <br>  <img src= "https://image.flaticon.com/icons/png/128/2231/2231696.png" > </img>   </h3>
+</div>
+
+<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#about_us"> About Us!</a>
+  <a href="#courses"> Courses </a>
+  <a href="#events"> Events </a>
+  <a href="#contact" class="right"> Contact Us!</a>
+</div>
+<br> <br> <br> 
+
+<!-- Javascript code -->
+<script>
+'use strict';
+
+/**
+ * Not doing any polyfills, this is a one-off, added fun little extra
+ * Assumes window.requestAnimationFrame support, unprefixed CSS Transforms,
+ * emoji support, and ES6 support
+ */
+
+//Each update cycle should remove this much life from a snowflake
+const LIFE_PER_TICK = 1000 / 60;
+ //Number of snowflakes
+const MAX_FLAKES = Math.min(75, screen.width / 1280 * 75);
+//The array of snow particles to be animated. They are HTMLElements
+const flakes = [];
+
+//A variety of periodic movement functions for the x-axis to create a range of snow falling models
+//The initial multiplier determines how far it moves in vw units at most, from the original
+//x-axis position
+const period = [
+    n => 5 * (Math.sin(n)),
+    n => 8 * (Math.cos(n)),
+    n => 5 * (Math.sin(n) * Math.cos(2 * n)),
+    n => 2 * (Math.sin(0.25 * n) - Math.cos(0.75 * n) + 1),
+    n => 5 * (Math.sin(0.75 * n) + Math.cos(0.25 * n) - 1)
+];
+
+//Emojis to substitute for snowflakes, just for fun
+const fun = ['⛄', '🎁', '🦌', '☃', '🍪'];
+
+//The CSS styles for the snowflakes and container
+const cssString = `.snowfall-container {
+    display: block;
+    height: 100vh;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-perspective-origin: top center;
+            perspective-origin: top center;
+    -webkit-perspective: 150px;
+            perspective: 150px;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    width: 100%;
+    z-index: 99999; }
+
+  .snowflake {
+    pointer-events: none;
+    color: #ddf;
+    display: block;
+    font-size: 24px;
+    left: -12px;
+    line-height: 24px;
+    position: absolute;
+    top: -12px;
+    -webkit-transform-origin: center;
+            transform-origin: center; }`;
+
+// Add a DOMContentLoaded listener, or fire the function immediately if that already happened
+function ready(fn) {
+    if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+        fn();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+// Reset a flake to newly randomized values
+function resetFlake(flake) {
+    // X-axis is in vw CSS units
+    let x = flake.dataset.origX = (Math.random() * 100);
+    //Y-axis is in CSS vh units
+    let y = flake.dataset.origY = 0;
+
+    //Once in awhile, have closer snowflakes
+    //Z-axis is in CSS px units
+    let z = flake.dataset.origZ = (Math.random() < 0.1) ? (Math.ceil(Math.random() * 100) + 25) : 0;
+
+    let life = flake.dataset.life = (Math.ceil(Math.random() * 4000) + 6000); //Milliseconds
+    flake.dataset.origLife = life; //Timestamps for flake creation
+
+    flake.style.transform = `translate3d(${x}vw, ${y}vh, ${z}px)`;
+    flake.style.opacity = 1.0;
+
+    //This is the index into the period function array
+    flake.dataset.periodFunction = Math.floor(Math.random() * period.length);
+
+    if (Math.random() < 0.001) {
+        //Very small chance of some fun happening
+        flake.innerText = fun[Math.floor(Math.random() * fun.length)];
+    }
+}
+
+// Move all the snowflakes
+function updatePositions() {
+
+    flakes.forEach((flake) => {
+        // Normalize amount of time a snowfalke has been alive to the range [0, 1.0]
+        let origLife = parseFloat(flake.dataset.origLife)
+        let curLife = parseFloat(flake.dataset.life);
+        let dt = (origLife - curLife) / origLife;
+
+        if (dt <= 1.0) {
+            // Fetch this flake's personalized periodicity for x-axis movement fromt he array
+            let p = period[parseInt(flake.dataset.periodFunction)];
+            // Calculate new x-position, relative to original starting x
+            let x = p(dt * 2 * Math.PI) + parseFloat(flake.dataset.origX);
+            //Snowflakes fall to the bottom of the screen using a straight linear progression over their lifespan
+            let y = 100 * dt;
+            // Z-depth does not vary over time, although I guess it could?
+            let z = parseFloat(flake.dataset.origZ);
+            // Each update, change the CSS transformation
+            flake.style.transform = `translate3d(${x}vw, ${y}vh, ${z}px)`;
+
+            if (dt >= 0.5) {
+                //Start fading out flakes 1/2 down screen
+                flake.style.opacity = (1.0 - ((dt - 0.5) * 2));
+            }
+
+            curLife -= LIFE_PER_TICK;
+            flake.dataset.life = curLife;
+        }
+        else {
+            //Once the lifespan is exceeded, reset the flake
+            resetFlake(flake);
+        }
+    });
+
+    //Using requestAnimationFrame to update the positions for a (hopefully) smooth animation
+    window.requestAnimationFrame(updatePositions);
+}
+
+
+function appendSnow() {
+    //Append the CSS styles to the document head
+    let styles = document.createElement('style');
+    styles.innerText = cssString;
+    document.querySelector('head').appendChild(styles);
+
+    //Create the container for the snowflakes and add it to the document body
+    let field = document.createElement('div');
+    field.classList.add('snowfall-container');
+
+    //set aria-hidden and role=presentation so that screen readers don't read the emoji
+    field.setAttribute('aria-hidden', 'true');
+    field.setAttribute('role', 'presentation');
+    document.body.appendChild(field);
+
+    let i = 0;
+
+    //Using an inner function and setTimeout to delay the initial snowfall
+    //This makes it much less clumpy
+    const addFlake = () => {
+        let flake = document.createElement('span');
+        flake.classList.add('snowflake');
+        flake.setAttribute('aria-hidden', 'true');
+        flake.setAttribute('role', 'presentation');
+        flake.innerText = '❄';
+        resetFlake(flake);
+        flakes.push(flake);
+        field.appendChild(flake);
+
+        //Recursive (delayed by timeout) call to add a flake until max reached
+        if (i++ <= MAX_FLAKES) {
+            setTimeout(addFlake, Math.ceil(Math.random() * 300) + 100);
+        }
+    };
+    addFlake();
+
+    updatePositions();
+}
+
+ready(appendSnow);
+
+
+</script>
+
+
+<center> 
+<div>
+<img src="https://images.unsplash.com/20/cambridge.JPG?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGNvbGxlZ2V8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="College" width="50%"> </img> 
+
+<br>
+<br>
+</div>
+</center>
+
+<!--About us-->
+
+<div class="top" id="about_us">
+  <h1 style="margin-left: 10px ;"> About us! </h1> 
+</div>
+<br> <br> 
+<p style="margin-left: 10px; "> 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor and vitality, so that the labor and sorrow, some important things to do eiusmod. 
+  Over the years, I will come, who will nostrud aliquip out of her the advantage of exercise, so that stimulus efforts if the school district and longevity are excepteur
+    blacks do not excepteur cupidatat, is soothing to the soul, that is my toil, they deserted the general duties of those who are at fault, consectetur adipiscing elit, sed tempor and vitality, so that the labor and sorrow, some important things to do eiusmod. 
+    Over the years come, who nostrud exercise, the school district
+    so that ea commodo consequat from the stimulus efforts if the aliquip. <br> <br> <br> 
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, dolorem est. Corporis aspernatur est possimus, praesentium nihil fugit, reiciendis ad blanditiis laborum, minus nam et? Soluta, recusandae accusantium! Eos,Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ut, error iure sunt pariatur consequatur cumque voluptas eveniet rerum? Molestiae veniam similique reiciendis laudantium amet voluptate provident. Neque, debitis reprehenderit! Blanditiis iste similique quasi sunt? <br> <br> <br> 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, impedit beatae veritatis vero, consectetur maxime repellendus nemo voluptates, odio autem minus eos. Quisquam voluptatum nam quis libero, impedit voluptates Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod in eos fugiat expedita sint, unde maiores hic tempore maxime, voluptatibus aspernatur. Porro, similique quis. Alias voluptas consequuntur sint esse Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, quasi et. Dignissimos ipsam nulla, ullam qui ipsum minima perspiciatis doloribus sint exercitationem iste corporis quam dolor odit quo alias explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quos illum temporibus, esse iure accusantium nam ab aut dolorum expedita ratione neque deleniti laudantium atque vitae optio distinctio. Vitae, cupiditate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga optio dolores sapiente rerum dicta, blanditiis adipisci quasi nam nihil tempora animi quisquam culpa recusandae. Enim fugit maxime obcaecati veritatis corporis? <br> <br>
+</p>
+
+<!-- Branches -->
+<br> 
+<hr style="width:50%;text-align:left;margin-left:0">
+<br>
+<div class="top" id="courses">
+  <h1 style="margin-left: 10px ;"> Courses! </h1> 
+</div>
+ <br>
+<section class="hero-section">
+
+  <div class="card-grid">
+      <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1599468942589-169d67c8d30a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGNvbGxlZ2UlMjBjb21wdXRlciUyMGxhYnN8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+          <div class="card__content">
+              <p class="card__category">Block-1 </p>
+              <h3 class="card__heading">CSE</h3>
+          </div>
+      </a>
+      <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1518276780006-c85b06fa3c11?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d2lyZXN8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+          <div class="card__content">
+              <p class="card__category">Block-2</p>
+              <h3 class="card__heading">ECE</h3>
+          </div>
+      </a>
+      <a class="card" href="#">
+          <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1603577892244-2645763c6bec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhbnNmb3JtZXJzfGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+          <div class="card__content">
+              <p class="card__category">Block-3</p>
+              <h3 class="card__heading">EE</h3>
+          </div>
+          </li>
+          <a class="card" href="#">
+              <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1617194280586-97ececece2f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWVjaGFuaWNhbCUyMGxhYnN8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+              <div class="card__content">
+                  <p class="card__category">Block-4</p>
+                  <h3 class="card__heading">ME</h3>
+              </div>
+          </a>
+
+</section>
+<br> <br>
+
+<!-- Events Portion -->
+
+<div class="top" id="events">
+  <h1 style="margin-left: 10px ;"> Events! </h1> 
+</div>
+<br> <br> 
+<p style="margin-left: 10px; "> 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor and vitality, so that the labor and sorrow, some important things to do eiusmod. 
+  Over the years, I will come, who will nostrud aliquip out of her the advantage of exercise, so that stimulus efforts if the school district and longevity are excepteur
+    blacks do not excepteur cupidatat, is soothing to the soul, that is my toil, they deserted the general duties of those who are at fault, consectetur adipiscing elit, sed tempor and vitality, so that the labor and sorrow, some important things to do eiusmod. 
+    Over the years come, who nostrud exercise, the school district
+    so that ea commodo consequat from the stimulus efforts if the aliquip. <br> <br> <br> 
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, dolorem est. Corporis aspernatur est possimus, praesentium nihil fugit, reiciendis ad blanditiis laborum, minus nam et? Soluta, recusandae accusantium! Eos,Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ut, error iure sunt pariatur consequatur cumque voluptas eveniet rerum? Molestiae veniam similique reiciendis laudantium amet voluptate provident. Neque, debitis reprehenderit! Blanditiis iste similique quasi sunt? <br> <br> <br> 
+</p>
+<br> <br>
+<div class="top" id="contact">
+  <h1 style="margin-left: 10px ;"> GET IN TOUCH ! </h1> 
+</div>
+<br> <br> 
+
+<form name="myform" action="" method="POST" onsubmit="return validForm()"> 
+  <div class="contactform">
+    <div style="text-align:center">
+      <h1>Get In Touch</h1>
+      <p>Contact me for a quote, to collaborate or just say hi :) </p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.."> 
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email..">
+            
+  
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+          </form>  
+
+</body>
+</html>
